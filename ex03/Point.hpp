@@ -6,7 +6,7 @@
 /*   By: jodufour <jodufour@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/26 03:25:55 by jodufour          #+#    #+#             */
-/*   Updated: 2022/01/26 08:47:57 by jodufour         ###   ########.fr       */
+/*   Updated: 2022/01/26 14:49:26 by jodufour         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ public:
 	Fixed	x(void) const;
 	Fixed	y(void) const;
 
-	// Operator Overloads
+	// Operator overloads
 	Point	&operator=(Point const &rhs);
 };
 
