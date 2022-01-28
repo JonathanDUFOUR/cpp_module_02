@@ -6,7 +6,7 @@
 #    By: jodufour <jodufour@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/01/24 16:19:17 by jodufour          #+#    #+#              #
-#    Updated: 2022/01/24 16:21:44 by jodufour         ###   ########.fr        #
+#    Updated: 2022/01/29 00:32:48 by jodufour         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,14 +26,17 @@ NAME			=	ex01.out
 #######################################
 #             DIRECTORIES             #
 #######################################
-SRC_DIR			=	./
+SRC_DIR			=	srcs/
 OBJ_DIR			=	objs/
+PRV_DIR			=	private/
 
 ######################################
 #            SOURCE FILES            #
 ######################################
 SRC				=	\
-					Fixed.cpp	\
+					${addprefix class/,	\
+						Fixed.cpp		\
+					}					\
 					main.cpp
 
 ######################################
@@ -50,6 +53,7 @@ DEP				=	${OBJ:.o=.d}
 CPPFLAGS		=	-Wall -Wextra -Werror
 CPPFLAGS		+=	-std=c++98
 CPPFLAGS		+=	-MMD -MP
+CPPFLAGS		+=	-I${PRV_DIR}
 
 LDFLAGS			=	
 

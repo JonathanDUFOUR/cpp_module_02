@@ -6,7 +6,7 @@
 #    By: jodufour <jodufour@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/01/26 00:12:40 by jodufour          #+#    #+#              #
-#    Updated: 2022/01/26 00:29:30 by jodufour         ###   ########.fr        #
+#    Updated: 2022/01/29 00:34:37 by jodufour         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,14 +26,17 @@ NAME			=	ex02.out
 #######################################
 #             DIRECTORIES             #
 #######################################
-SRC_DIR			=	./
+SRC_DIR			=	srcs/
 OBJ_DIR			=	objs/
+PRV_DIR			=	private/
 
 ######################################
 #            SOURCE FILES            #
 ######################################
 SRC				=	\
-					Fixed.cpp	\
+					${addprefix class/,	\
+						Fixed.cpp		\
+					}					\
 					main.cpp
 
 ######################################
@@ -50,6 +53,7 @@ DEP				=	${OBJ:.o=.d}
 CPPFLAGS		=	-Wall -Wextra -Werror
 CPPFLAGS		+=	-std=c++98
 CPPFLAGS		+=	-MMD -MP
+CPPFLAGS		+=	-I${PRV_DIR}
 
 LDFLAGS			=	
 

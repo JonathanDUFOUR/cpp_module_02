@@ -6,7 +6,7 @@
 #    By: jodufour <jodufour@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/01/26 03:24:48 by jodufour          #+#    #+#              #
-#    Updated: 2022/01/26 03:26:27 by jodufour         ###   ########.fr        #
+#    Updated: 2022/01/29 00:38:51 by jodufour         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,17 +26,20 @@ NAME			=	ex03.out
 #######################################
 #             DIRECTORIES             #
 #######################################
-SRC_DIR			=	./
+SRC_DIR			=	srcs/
 OBJ_DIR			=	objs/
+PRV_DIR			=	private/
 
 ######################################
 #            SOURCE FILES            #
 ######################################
 SRC				=	\
+					${addprefix class/,	\
+						Fixed.cpp		\
+						Point.cpp		\
+					}					\
 					bsp.cpp		\
-					Fixed.cpp	\
-					main.cpp	\
-					Point.cpp
+					main.cpp
 
 ######################################
 #            OBJECT FILES            #
@@ -52,6 +55,7 @@ DEP				=	${OBJ:.o=.d}
 CPPFLAGS		=	-Wall -Wextra -Werror
 CPPFLAGS		+=	-std=c++98
 CPPFLAGS		+=	-MMD -MP
+CPPFLAGS		+=	-I${PRV_DIR}
 
 LDFLAGS			=	
 

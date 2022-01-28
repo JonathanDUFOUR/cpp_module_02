@@ -6,13 +6,13 @@
 /*   By: jodufour <jodufour@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/21 20:14:51 by jodufour          #+#    #+#             */
-/*   Updated: 2022/01/26 09:14:11 by jodufour         ###   ########.fr       */
+/*   Updated: 2022/01/29 00:39:18 by jodufour         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <cstdlib>
 #include <iostream>
-#include "Point.hpp"
+#include "class/Point.hpp"
 
 bool	bsp(Point const a, Point const b, Point const c, Point const p);
 

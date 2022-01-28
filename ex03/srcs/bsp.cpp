@@ -6,11 +6,11 @@
 /*   By: jodufour <jodufour@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/26 05:43:51 by jodufour          #+#    #+#             */
-/*   Updated: 2022/01/26 09:21:17 by jodufour         ###   ########.fr       */
+/*   Updated: 2022/01/29 00:39:33 by jodufour         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Point.hpp"
+#include "class/Point.hpp"
 
 static Fixed	__area(Point const a, Point const b, Point const c)
 {

@@ -6,12 +6,12 @@
 /*   By: jodufour <jodufour@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/22 21:04:08 by jodufour          #+#    #+#             */
-/*   Updated: 2022/01/26 03:15:42 by jodufour         ###   ########.fr       */
+/*   Updated: 2022/01/29 00:29:35 by jodufour         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <cmath>
-#include "Fixed.hpp"
+#include "class/Fixed.hpp"
 
 // ************************************************************************** //
 //                                Constructors                                //
@@ -63,6 +63,11 @@ int	Fixed::toInt(void) const
 float	Fixed::toFloat(void) const
 {
 	return (float)this->_val / (1 << _dotPos);
+}
+
+Fixed	Fixed::abs(Fixed const &src)
+{
+	return Fixed((src.toFloat() < 0 ? -1.0f : 1.0f) * src.toFloat());
 }
 
 Fixed	&Fixed::max(Fixed &a, Fixed &b)
