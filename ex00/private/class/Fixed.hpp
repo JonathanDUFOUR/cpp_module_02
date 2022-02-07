@@ -6,7 +6,7 @@
 /*   By: jodufour <jodufour@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/21 20:37:07 by jodufour          #+#    #+#             */
-/*   Updated: 2022/01/26 01:18:18 by jodufour         ###   ########.fr       */
+/*   Updated: 2022/02/07 03:50:39 by jodufour         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ public:
 
 	void	setRawBits(int const val);
 
-	// Operator overloads
+	// Operators
 	Fixed	&operator=(Fixed const &rhs);
 };
 

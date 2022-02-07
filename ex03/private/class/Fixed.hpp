@@ -6,7 +6,7 @@
 /*   By: jodufour <jodufour@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/21 20:37:07 by jodufour          #+#    #+#             */
-/*   Updated: 2022/01/26 09:21:00 by jodufour         ###   ########.fr       */
+/*   Updated: 2022/02/07 03:50:39 by jodufour         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ public:
 	static Fixed const	&max(Fixed const &a, Fixed const &b);
 	static Fixed const	&min(Fixed const &a, Fixed const &b);
 
-	// Operator overloads
+	// Operators
 	Fixed	&operator=(Fixed const &rhs);
 	bool	operator>(Fixed const &rhs) const;
 	bool	operator<(Fixed const &rhs) const;
