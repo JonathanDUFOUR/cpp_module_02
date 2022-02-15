@@ -6,7 +6,7 @@
 /*   By: jodufour <jodufour@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/22 21:04:08 by jodufour          #+#    #+#             */
-/*   Updated: 2022/02/07 04:00:12 by jodufour         ###   ########.fr       */
+/*   Updated: 2022/02/15 05:28:41 by jodufour         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,17 +19,20 @@
 Fixed::Fixed(void) :
 	_val(0)
 {
-	std::cout
-	<< "Default constructor called"
-	<< std::endl;
+	if (DBG)
+		std::cout
+		<< "Creating Fixed"
+		<< std::endl;
 }
 
-Fixed::Fixed(Fixed const &src)
+Fixed::Fixed(Fixed const &src) :
+	_val(src._val)
 {
+	if (DBG)
+		std::cout
+		<< "Creating Fixed"
+		<< std::endl;
 	*this = src;
-	std::cout
-	<< "Copy constructor called"
-	<< std::endl;
 }
 
 // ************************************************************************* //
@@ -38,9 +41,10 @@ Fixed::Fixed(Fixed const &src)
 
 Fixed::~Fixed(void)
 {
-	std::cout
-	<< "Destructor called"
-	<< std::endl;
+	if (DBG)
+		std::cout
+		<< "Destroying Fixed"
+		<< std::endl;
 }
 
 // ************************************************************************* //
@@ -49,17 +53,19 @@ Fixed::~Fixed(void)
 
 int	Fixed::getRawBits(void) const
 {
-	std::cout
-	<< "getRawBits member function called"
-	<< std::endl;
+	if (DBG)
+		std::cout
+		<< "Calling Fixed::getRawBits()"
+		<< std::endl;
 	return this->_val;
 }
 
 void	Fixed::setRawBits(int const val)
 {
-	std::cout
-	<< "setRawBits member function called"
-	<< std::endl;
+	if (DBG)
+		std::cout
+		<< "Calling Fixed::setRawBits()"
+		<< std::endl;
 	this->_val = val;
 }
 
@@ -69,9 +75,10 @@ void	Fixed::setRawBits(int const val)
 
 Fixed	&Fixed::operator=(Fixed const &rhs)
 {
-	std::cout
-	<< "Copy assignement operator called"
-	<< std::endl;
+	if (DBG)
+		std::cout
+		<< "Calling Fixed::operator=()"
+		<< std::endl;
 	if (this != &rhs)
 		this->_val = rhs.getRawBits();
 	return *this;

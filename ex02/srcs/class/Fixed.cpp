@@ -6,7 +6,7 @@
 /*   By: jodufour <jodufour@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/22 21:04:08 by jodufour          #+#    #+#             */
-/*   Updated: 2022/02/07 04:01:03 by jodufour         ###   ########.fr       */
+/*   Updated: 2022/02/15 05:51:22 by jodufour         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,24 +18,53 @@
 // ************************************************************************** //
 
 Fixed::Fixed(void) :
-	_val(0) {}
-
-Fixed::Fixed(Fixed const &src)
+	_val(0)
 {
+	if (DBG)
+		std::cout
+		<< "Creating Fixed"
+		<< std::endl;
+}
+
+Fixed::Fixed(Fixed const &src) :
+	_val(src._val)
+{
+	if (DBG)
+		std::cout
+		<< "Creating Fixed"
+		<< std::endl;
 	*this = src;
 }
 
 Fixed::Fixed(int const val) :
-	_val(val << _dotPos) {}
+	_val(val << _dotPos)
+{
+	if (DBG)
+		std::cout
+		<< "Creating Fixed"
+		<< std::endl;
+}
 
 Fixed::Fixed(float const val) :
-	_val(roundf(val * (1 << _dotPos))) {}
+	_val(roundf(val * (1 << _dotPos)))
+{
+	if (DBG)
+		std::cout
+		<< "Creating Fixed"
+		<< std::endl;
+}
 
 // ************************************************************************* //
 //                                Destructors                                //
 // ************************************************************************* //
 
-Fixed::~Fixed(void) {}
+Fixed::~Fixed(void)
+{
+	if (DBG)
+		std::cout
+		<< "Destroying Fixed"
+		<< std::endl;
+}
 
 // ************************************************************************* //
 //                                 Accessors                                 //
@@ -43,11 +72,19 @@ Fixed::~Fixed(void) {}
 
 int	Fixed::getRawBits(void) const
 {
+	if (DBG)
+		std::cout
+		<< "Calling Fixed::getRawBits()"
+		<< std::endl;
 	return this->_val;
 }
 
 void	Fixed::setRawBits(int const val)
 {
+	if (DBG)
+		std::cout
+		<< "Calling Fixed::setRawBits()"
+		<< std::endl;
 	this->_val = val;
 }
 
@@ -57,16 +94,28 @@ void	Fixed::setRawBits(int const val)
 
 int	Fixed::toInt(void) const
 {
+	if (DBG)
+		std::cout
+		<< "Calling Fixed::toInt()"
+		<< std::endl;
 	return this->_val >> _dotPos;
 }
 
 float	Fixed::toFloat(void) const
 {
+	if (DBG)
+		std::cout
+		<< "Calling Fixed::toFloat()"
+		<< std::endl;
 	return (float)this->_val / (1 << _dotPos);
 }
 
 Fixed	&Fixed::max(Fixed &a, Fixed &b)
 {
+	if (DBG)
+		std::cout
+		<< "Calling Fixed::max()"
+		<< std::endl;
 	if (a > b)
 		return a;
 	return b;
@@ -74,6 +123,10 @@ Fixed	&Fixed::max(Fixed &a, Fixed &b)
 
 Fixed	&Fixed::min(Fixed &a, Fixed &b)
 {
+	if (DBG)
+		std::cout
+		<< "Calling Fixed::min()"
+		<< std::endl;
 	if (a < b)
 		return a;
 	return b;
@@ -81,6 +134,10 @@ Fixed	&Fixed::min(Fixed &a, Fixed &b)
 
 Fixed const	&Fixed::max(Fixed const &a, Fixed const &b)
 {
+	if (DBG)
+		std::cout
+		<< "Calling Fixed::max()"
+		<< std::endl;
 	if (a > b)
 		return a;
 	return b;
@@ -88,6 +145,10 @@ Fixed const	&Fixed::max(Fixed const &a, Fixed const &b)
 
 Fixed const	&Fixed::min(Fixed const &a, Fixed const &b)
 {
+	if (DBG)
+		std::cout
+		<< "Calling Fixed::min()"
+		<< std::endl;
 	if (a < b)
 		return a;
 	return b;
@@ -99,6 +160,10 @@ Fixed const	&Fixed::min(Fixed const &a, Fixed const &b)
 
 Fixed	&Fixed::operator=(Fixed const &rhs)
 {
+	if (DBG)
+		std::cout
+		<< "Calling Fixed::operator=()"
+		<< std::endl;
 	if (this != &rhs)
 		this->_val = rhs.getRawBits();
 	return *this;
@@ -106,51 +171,91 @@ Fixed	&Fixed::operator=(Fixed const &rhs)
 
 bool	Fixed::operator>(Fixed const &rhs) const
 {
+	if (DBG)
+		std::cout
+		<< "Calling Fixed::operator>()"
+		<< std::endl;
 	return this->_val > rhs._val;
 }
 
 bool	Fixed::operator<(Fixed const &rhs) const
 {
+	if (DBG)
+		std::cout
+		<< "Calling Fixed::operator<()"
+		<< std::endl;
 	return this->_val < rhs._val;
 }
 
 bool	Fixed::operator>=(Fixed const &rhs) const
 {
+	if (DBG)
+		std::cout
+		<< "Calling Fixed::operator>=()"
+		<< std::endl;
 	return this->_val >= rhs._val;
 }
 
 bool	Fixed::operator<=(Fixed const &rhs) const
 {
+	if (DBG)
+		std::cout
+		<< "Calling Fixed::operator<=()"
+		<< std::endl;
 	return this->_val <= rhs._val;
 }
 
 bool	Fixed::operator==(Fixed const &rhs) const
 {
+	if (DBG)
+		std::cout
+		<< "Calling Fixed::operator==()"
+		<< std::endl;
 	return this->_val == rhs._val;
 }
 
 bool	Fixed::operator!=(Fixed const &rhs) const
 {
+	if (DBG)
+		std::cout
+		<< "Calling Fixed::operator!=()"
+		<< std::endl;
 	return this->_val != rhs._val;
 }
 
 Fixed	Fixed::operator+(Fixed const &rhs) const
 {
+	if (DBG)
+		std::cout
+		<< "Calling Fixed::operator+()"
+		<< std::endl;
 	return Fixed(this->toFloat() + rhs.toFloat());
 }
 
 Fixed	Fixed::operator-(Fixed const &rhs) const
 {
+	if (DBG)
+		std::cout
+		<< "Calling Fixed::operator-()"
+		<< std::endl;
 	return Fixed(this->toFloat() - rhs.toFloat());
 }
 
 Fixed	Fixed::operator*(Fixed const &rhs) const
 {
+	if (DBG)
+		std::cout
+		<< "Calling Fixed::operator*()"
+		<< std::endl;
 	return Fixed(this->toFloat() * rhs.toFloat());
 }
 
 Fixed	Fixed::operator/(Fixed const &rhs) const
 {
+	if (DBG)
+		std::cout
+		<< "Calling Fixed::operator/()"
+		<< std::endl;
 	return Fixed(this->toFloat() / rhs.toFloat());
 }
 
@@ -158,6 +263,10 @@ Fixed	Fixed::operator++(int)
 {
 	Fixed	n(*this);
 
+	if (DBG)
+		std::cout
+		<< "Calling Fixed::operator++()"
+		<< std::endl;
 	++this->_val;
 	return n;
 }
@@ -166,18 +275,30 @@ Fixed	Fixed::operator--(int)
 {
 	Fixed	n(*this);
 
+	if (DBG)
+		std::cout
+		<< "Calling Fixed::operator--()"
+		<< std::endl;
 	--this->_val;
 	return n;
 }
 
 Fixed	&Fixed::operator++(void)
 {
+	if (DBG)
+		std::cout
+		<< "Calling Fixed::operator++()"
+		<< std::endl;
 	++this->_val;
 	return *this;
 }
 
 Fixed	&Fixed::operator--(void)
 {
+	if (DBG)
+		std::cout
+		<< "Calling Fixed::operator--()"
+		<< std::endl;
 	--this->_val;
 	return *this;
 }
