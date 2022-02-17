@@ -6,7 +6,7 @@
 /*   By: jodufour <jodufour@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/22 21:04:08 by jodufour          #+#    #+#             */
-/*   Updated: 2022/02/15 05:50:30 by jodufour         ###   ########.fr       */
+/*   Updated: 2022/02/15 23:59:00 by jodufour         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@
 Fixed::Fixed(void) :
 	_val(0)
 {
-	if (DBG)
+	if (DEBUG)
 		std::cout
 		<< "Creating Fixed"
 		<< std::endl;
@@ -28,7 +28,7 @@ Fixed::Fixed(void) :
 
 Fixed::Fixed(Fixed const &src)
 {
-	if (DBG)
+	if (DEBUG)
 		std::cout
 		<< "Creating Fixed"
 		<< std::endl;
@@ -38,7 +38,7 @@ Fixed::Fixed(Fixed const &src)
 Fixed::Fixed(int const val) :
 	_val(val << _dotPos)
 {
-	if (DBG)
+	if (DEBUG)
 		std::cout
 		<< "Creating Fixed"
 		<< std::endl;
@@ -47,7 +47,7 @@ Fixed::Fixed(int const val) :
 Fixed::Fixed(float const val) :
 	_val(roundf(val * (1 << _dotPos)))
 {
-	if (DBG)
+	if (DEBUG)
 		std::cout
 		<< "Creating Fixed"
 		<< std::endl;
@@ -59,7 +59,7 @@ Fixed::Fixed(float const val) :
 
 Fixed::~Fixed(void)
 {
-	if (DBG)
+	if (DEBUG)
 		std::cout
 		<< "Destroying Fixed"
 		<< std::endl;
@@ -71,7 +71,7 @@ Fixed::~Fixed(void)
 
 int	Fixed::getRawBits(void) const
 {
-	if (DBG)
+	if (DEBUG)
 		std::cout
 		<< "Calling Fixed::getRawBits()"
 		<< std::endl;
@@ -80,7 +80,7 @@ int	Fixed::getRawBits(void) const
 
 void	Fixed::setRawBits(int const val)
 {
-	if (DBG)
+	if (DEBUG)
 		std::cout
 		<< "Calling Fixed::setRawBits()"
 		<< std::endl;
@@ -93,7 +93,7 @@ void	Fixed::setRawBits(int const val)
 
 int	Fixed::toInt(void) const
 {
-	if (DBG)
+	if (DEBUG)
 		std::cout
 		<< "Calling Fixed::toInt()"
 		<< std::endl;
@@ -102,7 +102,7 @@ int	Fixed::toInt(void) const
 
 float	Fixed::toFloat(void) const
 {
-	if (DBG)
+	if (DEBUG)
 		std::cout
 		<< "Calling Fixed::toFloat()"
 		<< std::endl;
@@ -115,7 +115,7 @@ float	Fixed::toFloat(void) const
 
 Fixed	&Fixed::operator=(Fixed const &rhs)
 {
-	if (DBG)
+	if (DEBUG)
 		std::cout
 		<< "Calling Fixed::operator=()"
 		<< std::endl;

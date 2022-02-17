@@ -6,7 +6,7 @@
 /*   By: jodufour <jodufour@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/22 21:04:08 by jodufour          #+#    #+#             */
-/*   Updated: 2022/02/15 05:39:21 by jodufour         ###   ########.fr       */
+/*   Updated: 2022/02/15 23:59:00 by jodufour         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@
 Fixed::Fixed(void) :
 	_val(0)
 {
-	if (DBG)
+	if (DEBUG)
 		std::cout
 		<< "Creating Fixed"
 		<< std::endl;
@@ -28,7 +28,7 @@ Fixed::Fixed(void) :
 
 Fixed::Fixed(Fixed const &src)
 {
-	if (DBG)
+	if (DEBUG)
 		std::cout
 		<< "Creating Fixed"
 		<< std::endl;
@@ -38,7 +38,7 @@ Fixed::Fixed(Fixed const &src)
 Fixed::Fixed(int const val) :
 	_val(val << _dotPos)
 {
-	if (DBG)
+	if (DEBUG)
 		std::cout
 		<< "Creating Fixed"
 		<< std::endl;
@@ -47,7 +47,7 @@ Fixed::Fixed(int const val) :
 Fixed::Fixed(float const val) :
 	_val(roundf(val * (1 << _dotPos)))
 {
-	if (DBG)
+	if (DEBUG)
 		std::cout
 		<< "Creating Fixed"
 		<< std::endl;
@@ -59,7 +59,7 @@ Fixed::Fixed(float const val) :
 
 Fixed::~Fixed(void)
 {
-	if (DBG)
+	if (DEBUG)
 		std::cout
 		<< "Destroying Fixed"
 		<< std::endl;
@@ -71,7 +71,7 @@ Fixed::~Fixed(void)
 
 int	Fixed::getRawBits(void) const
 {
-	if (DBG)
+	if (DEBUG)
 		std::cout
 		<< "Calling Fixed::getRawBits()"
 		<< std::endl;
@@ -80,7 +80,7 @@ int	Fixed::getRawBits(void) const
 
 void	Fixed::setRawBits(int const val)
 {
-	if (DBG)
+	if (DEBUG)
 		std::cout
 		<< "Calling Fixed::setRawBits()"
 		<< std::endl;
@@ -93,7 +93,7 @@ void	Fixed::setRawBits(int const val)
 
 int	Fixed::toInt(void) const
 {
-	if (DBG)
+	if (DEBUG)
 		std::cout
 		<< "Calling Fixed::toInt()"
 		<< std::endl;
@@ -102,7 +102,7 @@ int	Fixed::toInt(void) const
 
 float	Fixed::toFloat(void) const
 {
-	if (DBG)
+	if (DEBUG)
 		std::cout
 		<< "Calling Fixed::toFloat()"
 		<< std::endl;
@@ -111,7 +111,7 @@ float	Fixed::toFloat(void) const
 
 Fixed	Fixed::abs(Fixed const &src)
 {
-	if (DBG)
+	if (DEBUG)
 		std::cout
 		<< "Calling Fixed::abs()"
 		<< std::endl;
@@ -120,7 +120,7 @@ Fixed	Fixed::abs(Fixed const &src)
 
 Fixed	&Fixed::max(Fixed &a, Fixed &b)
 {
-	if (DBG)
+	if (DEBUG)
 		std::cout
 		<< "Calling Fixed::max()"
 		<< std::endl;
@@ -131,7 +131,7 @@ Fixed	&Fixed::max(Fixed &a, Fixed &b)
 
 Fixed	&Fixed::min(Fixed &a, Fixed &b)
 {
-	if (DBG)
+	if (DEBUG)
 		std::cout
 		<< "Calling Fixed::min()"
 		<< std::endl;
@@ -142,7 +142,7 @@ Fixed	&Fixed::min(Fixed &a, Fixed &b)
 
 Fixed const	&Fixed::max(Fixed const &a, Fixed const &b)
 {
-	if (DBG)
+	if (DEBUG)
 		std::cout
 		<< "Calling Fixed::max()"
 		<< std::endl;
@@ -153,7 +153,7 @@ Fixed const	&Fixed::max(Fixed const &a, Fixed const &b)
 
 Fixed const	&Fixed::min(Fixed const &a, Fixed const &b)
 {
-	if (DBG)
+	if (DEBUG)
 		std::cout
 		<< "Calling Fixed::min()"
 		<< std::endl;
@@ -168,7 +168,7 @@ Fixed const	&Fixed::min(Fixed const &a, Fixed const &b)
 
 Fixed	&Fixed::operator=(Fixed const &rhs)
 {
-	if (DBG)
+	if (DEBUG)
 		std::cout
 		<< "Calling Fixed::operator=()"
 		<< std::endl;
@@ -179,7 +179,7 @@ Fixed	&Fixed::operator=(Fixed const &rhs)
 
 bool	Fixed::operator>(Fixed const &rhs) const
 {
-	if (DBG)
+	if (DEBUG)
 		std::cout
 		<< "Calling Fixed::operator>()"
 		<< std::endl;
@@ -188,7 +188,7 @@ bool	Fixed::operator>(Fixed const &rhs) const
 
 bool	Fixed::operator<(Fixed const &rhs) const
 {
-	if (DBG)
+	if (DEBUG)
 		std::cout
 		<< "Calling Fixed::operator<()"
 		<< std::endl;
@@ -197,7 +197,7 @@ bool	Fixed::operator<(Fixed const &rhs) const
 
 bool	Fixed::operator>=(Fixed const &rhs) const
 {
-	if (DBG)
+	if (DEBUG)
 		std::cout
 		<< "Calling Fixed::operator>=()"
 		<< std::endl;
@@ -206,7 +206,7 @@ bool	Fixed::operator>=(Fixed const &rhs) const
 
 bool	Fixed::operator<=(Fixed const &rhs) const
 {
-	if (DBG)
+	if (DEBUG)
 		std::cout
 		<< "Calling Fixed::operator<=()"
 		<< std::endl;
@@ -215,7 +215,7 @@ bool	Fixed::operator<=(Fixed const &rhs) const
 
 bool	Fixed::operator==(Fixed const &rhs) const
 {
-	if (DBG)
+	if (DEBUG)
 		std::cout
 		<< "Calling Fixed::operator==()"
 		<< std::endl;
@@ -224,7 +224,7 @@ bool	Fixed::operator==(Fixed const &rhs) const
 
 bool	Fixed::operator!=(Fixed const &rhs) const
 {
-	if (DBG)
+	if (DEBUG)
 		std::cout
 		<< "Calling Fixed::operator!=()"
 		<< std::endl;
@@ -233,7 +233,7 @@ bool	Fixed::operator!=(Fixed const &rhs) const
 
 Fixed	Fixed::operator+(Fixed const &rhs) const
 {
-	if (DBG)
+	if (DEBUG)
 		std::cout
 		<< "Calling Fixed::operator+()"
 		<< std::endl;
@@ -242,7 +242,7 @@ Fixed	Fixed::operator+(Fixed const &rhs) const
 
 Fixed	Fixed::operator-(Fixed const &rhs) const
 {
-	if (DBG)
+	if (DEBUG)
 		std::cout
 		<< "Calling Fixed::operator-()"
 		<< std::endl;
@@ -251,7 +251,7 @@ Fixed	Fixed::operator-(Fixed const &rhs) const
 
 Fixed	Fixed::operator*(Fixed const &rhs) const
 {
-	if (DBG)
+	if (DEBUG)
 		std::cout
 		<< "Calling Fixed::operator*()"
 		<< std::endl;
@@ -260,7 +260,7 @@ Fixed	Fixed::operator*(Fixed const &rhs) const
 
 Fixed	Fixed::operator/(Fixed const &rhs) const
 {
-	if (DBG)
+	if (DEBUG)
 		std::cout
 		<< "Calling Fixed::operator/()"
 		<< std::endl;
@@ -271,7 +271,7 @@ Fixed	Fixed::operator++(int)
 {
 	Fixed	n(*this);
 
-	if (DBG)
+	if (DEBUG)
 		std::cout
 		<< "Calling Fixed::operator++(int)"
 		<< std::endl;
@@ -283,7 +283,7 @@ Fixed	Fixed::operator--(int)
 {
 	Fixed	n(*this);
 
-	if (DBG)
+	if (DEBUG)
 		std::cout
 		<< "Calling Fixed::operator--(int)"
 		<< std::endl;
@@ -293,7 +293,7 @@ Fixed	Fixed::operator--(int)
 
 Fixed	&Fixed::operator++(void)
 {
-	if (DBG)
+	if (DEBUG)
 		std::cout
 		<< "Calling Fixed::operator++(void)"
 		<< std::endl;
@@ -303,7 +303,7 @@ Fixed	&Fixed::operator++(void)
 
 Fixed	&Fixed::operator--(void)
 {
-	if (DBG)
+	if (DEBUG)
 		std::cout
 		<< "Calling Fixed::operator--(void)"
 		<< std::endl;

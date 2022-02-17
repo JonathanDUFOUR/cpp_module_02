@@ -6,7 +6,7 @@
 /*   By: jodufour <jodufour@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/26 03:25:44 by jodufour          #+#    #+#             */
-/*   Updated: 2022/02/15 05:38:41 by jodufour         ###   ########.fr       */
+/*   Updated: 2022/02/15 23:59:00 by jodufour         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ Point::Point(void) :
 	_x(Fixed(0)),
 	_y(Fixed(0))
 {
-	if (DBG)
+	if (DEBUG)
 		std::cout
 		<< "Creating Point"
 		<< std::endl;
@@ -28,7 +28,7 @@ Point::Point(void) :
 
 Point::Point(Point const &src)
 {
-	if (DBG)
+	if (DEBUG)
 		std::cout
 		<< "Creating Point"
 		<< std::endl;
@@ -39,7 +39,7 @@ Point::Point(float const x, float const y) :
 	_x(Fixed(x)),
 	_y(Fixed(y))
 {
-	if (DBG)
+	if (DEBUG)
 		std::cout
 		<< "Creating Point"
 		<< std::endl;
@@ -51,7 +51,7 @@ Point::Point(float const x, float const y) :
 
 Point::~Point(void)
 {
-	if (DBG)
+	if (DEBUG)
 		std::cout
 		<< "Destroying Point"
 		<< std::endl;
@@ -63,7 +63,7 @@ Point::~Point(void)
 
 Fixed	Point::x(void) const
 {
-	if (DBG)
+	if (DEBUG)
 		std::cout
 		<< "Calling Point::x()"
 		<< std::endl;
@@ -72,7 +72,7 @@ Fixed	Point::x(void) const
 
 Fixed	Point::y(void) const
 {
-	if (DBG)
+	if (DEBUG)
 		std::cout
 		<< "Calling Point::y()"
 		<< std::endl;
@@ -85,7 +85,7 @@ Fixed	Point::y(void) const
 
 Point	&Point::operator=(Point const &rhs)
 {
-	if (DBG)
+	if (DEBUG)
 		std::cout
 		<< "Calling Point::operator=()"
 		<< std::endl;

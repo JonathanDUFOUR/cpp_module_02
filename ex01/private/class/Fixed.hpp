@@ -6,7 +6,7 @@
 /*   By: jodufour <jodufour@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/21 20:37:07 by jodufour          #+#    #+#             */
-/*   Updated: 2022/02/15 05:48:50 by jodufour         ###   ########.fr       */
+/*   Updated: 2022/02/15 23:59:00 by jodufour         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,8 @@
 
 # include <iostream>
 
-# ifndef DBG
-#  define DBG 1
+# ifndef DEBUG
+#  define DEBUG 1
 # endif
 
 class Fixed
