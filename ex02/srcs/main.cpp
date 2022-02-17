@@ -6,7 +6,7 @@
 /*   By: jodufour <jodufour@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/21 20:14:51 by jodufour          #+#    #+#             */
-/*   Updated: 2022/01/29 00:29:35 by jodufour         ###   ########.fr       */
+/*   Updated: 2022/02/17 09:12:20 by jodufour         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ int	main(void)
 	Fixed	c(0);
 	Fixed	d(-21);
 
+	std::cout << std::boolalpha;
 	std::cout << "a: " << a << std::endl;
 	std::cout << "b: " << b << std::endl;
 	std::cout << "c: " << c << std::endl;
@@ -37,11 +38,11 @@ int	main(void)
 	std::cout << "--b: " << --b << std::endl;
 	std::cout << "d--: " << d-- << std::endl;
 	std::cout << "d: " << d << std::endl;
-	std::cout << "a > 1: " << (a > Fixed(1) ? "true" : "false") << std::endl;
-	std::cout << "d < -1: " << (d < Fixed(-1) ? "true" : "false") << std::endl;
-	std::cout << "b >= b + 1 - 1 * 1: " << (b >= b + Fixed(1) - Fixed(1) * Fixed(1) ? "true" : "false") << std::endl;
-	std::cout << "c <= c - 1: " << (c <= c - Fixed(1) ? "true" : "false") << std::endl;
-	std::cout << "c == 1: " << (c == Fixed(1) ? "true" : "false") << std::endl;
-	std::cout << "a != b: " << (a != b ? "true" : "false") << std::endl;
+	std::cout << "a > 1: " << (a > Fixed(1)) << std::endl;
+	std::cout << "d < -1: " << (d < Fixed(-1)) << std::endl;
+	std::cout << "b >= b + 1 - 1 * 1: " << (b >= b + Fixed(1) - Fixed(1) * Fixed(1)) << std::endl;
+	std::cout << "c <= c - 1: " << (c <= c - Fixed(1)) << std::endl;
+	std::cout << "c == 1: " << (c == Fixed(1)) << std::endl;
+	std::cout << "a != b: " << (a != b) << std::endl;
 	return EXIT_SUCCESS;
 }

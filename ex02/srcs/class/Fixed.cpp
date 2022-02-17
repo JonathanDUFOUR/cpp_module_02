@@ -6,7 +6,7 @@
 /*   By: jodufour <jodufour@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/22 21:04:08 by jodufour          #+#    #+#             */
-/*   Updated: 2022/02/15 23:59:00 by jodufour         ###   ########.fr       */
+/*   Updated: 2022/02/17 10:19:38 by jodufour         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,11 +33,11 @@ Fixed::Fixed(Fixed const &src) :
 		std::cout
 		<< "Creating Fixed"
 		<< std::endl;
-	*this = src;
 }
 
 Fixed::Fixed(int const val) :
 	_val(val << _dotPos)
+	// _val(val * 128)
 {
 	if (DEBUG)
 		std::cout
@@ -47,6 +47,7 @@ Fixed::Fixed(int const val) :
 
 Fixed::Fixed(float const val) :
 	_val(roundf(val * (1 << _dotPos)))
+	// _val(roundf(val * 128))
 {
 	if (DEBUG)
 		std::cout
@@ -99,6 +100,7 @@ int	Fixed::toInt(void) const
 		<< "Calling Fixed::toInt()"
 		<< std::endl;
 	return this->_val >> _dotPos;
+	// return this->_val / 128;
 }
 
 float	Fixed::toFloat(void) const
@@ -108,6 +110,7 @@ float	Fixed::toFloat(void) const
 		<< "Calling Fixed::toFloat()"
 		<< std::endl;
 	return (float)this->_val / (1 << _dotPos);
+	// return (float)this->_val / 128;
 }
 
 Fixed	&Fixed::max(Fixed &a, Fixed &b)

@@ -6,7 +6,7 @@
 /*   By: jodufour <jodufour@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/22 21:04:08 by jodufour          #+#    #+#             */
-/*   Updated: 2022/02/15 23:59:00 by jodufour         ###   ########.fr       */
+/*   Updated: 2022/02/17 10:22:06 by jodufour         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,13 +26,13 @@ Fixed::Fixed(void) :
 		<< std::endl;
 }
 
-Fixed::Fixed(Fixed const &src)
+Fixed::Fixed(Fixed const &src) :
+	_val(src._val)
 {
 	if (DEBUG)
 		std::cout
 		<< "Creating Fixed"
 		<< std::endl;
-	*this = src;
 }
 
 Fixed::Fixed(int const val) :

@@ -6,7 +6,7 @@
 /*   By: jodufour <jodufour@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/26 03:25:44 by jodufour          #+#    #+#             */
-/*   Updated: 2022/02/15 23:59:00 by jodufour         ###   ########.fr       */
+/*   Updated: 2022/02/17 10:20:51 by jodufour         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,13 +26,14 @@ Point::Point(void) :
 		<< std::endl;
 }
 
-Point::Point(Point const &src)
+Point::Point(Point const &src) :
+	_x(src._x),
+	_y(src._y)
 {
 	if (DEBUG)
 		std::cout
 		<< "Creating Point"
 		<< std::endl;
-	*this = src;
 }
 
 Point::Point(float const x, float const y) :
