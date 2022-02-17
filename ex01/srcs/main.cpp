@@ -6,7 +6,7 @@
 /*   By: jodufour <jodufour@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/21 20:14:51 by jodufour          #+#    #+#             */
-/*   Updated: 2022/01/29 00:29:35 by jodufour         ###   ########.fr       */
+/*   Updated: 2022/02/17 05:24:46 by jodufour         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int	main(void)
 {
 	Fixed	a;
 	Fixed	b(10);
-	Fixed	c(42.42f);
+	Fixed	c(-42.0f);
 	Fixed	d(b);
 
 	a = Fixed(1234.4321f);

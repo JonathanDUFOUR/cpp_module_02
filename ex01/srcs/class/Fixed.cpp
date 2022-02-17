@@ -6,7 +6,7 @@
 /*   By: jodufour <jodufour@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/22 21:04:08 by jodufour          #+#    #+#             */
-/*   Updated: 2022/02/15 23:59:00 by jodufour         ###   ########.fr       */
+/*   Updated: 2022/02/17 05:21:19 by jodufour         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ Fixed::Fixed(int const val) :
 }
 
 Fixed::Fixed(float const val) :
-	_val(roundf(val * (1 << _dotPos)))
+	_val((int)roundf(val * (1 << _dotPos)))
 {
 	if (DEBUG)
 		std::cout
