@@ -6,7 +6,7 @@
 /*   By: jodufour <jodufour@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/22 21:04:08 by jodufour          #+#    #+#             */
-/*   Updated: 2022/03/02 17:43:47 by jodufour         ###   ########.fr       */
+/*   Updated: 2022/03/02 21:02:15 by jodufour         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -316,4 +316,4 @@ std::ostream	&operator<<(std::ostream &o, Fixed const &rhs)
 //                             Private Attributes                             //
 // ************************************************************************** //
 
-uint const	Fixed::_dotPos(8);
+uint const	Fixed::_dotPos(8U);
