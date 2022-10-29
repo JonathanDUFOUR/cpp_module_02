@@ -6,7 +6,7 @@
 #    By: jodufour <jodufour@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/01/26 03:24:48 by jodufour          #+#    #+#              #
-#    Updated: 2022/05/20 01:52:52 by jodufour         ###   ########.fr        #
+#    Updated: 2022/10/29 08:11:20 by jodufour         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,9 +26,9 @@ NAME		=	ex03.out
 #######################################
 #             DIRECTORIES             #
 #######################################
-SRC_DIR		=	srcs/
-OBJ_DIR		=	objs/
-PRV_DIR		=	private/
+SRC_DIR		=	srcs
+OBJ_DIR		=	objs
+PRV_DIR		=	private
 
 ######################################
 #            SOURCE FILES            #
@@ -38,14 +38,14 @@ SRC			=	\
 					Fixed.cpp		\
 					Point.cpp		\
 				}					\
-				bsp.cpp		\
+				bsp.cpp				\
 				main.cpp
 
 ######################################
 #            OBJECT FILES            #
 ######################################
 OBJ			=	${SRC:.cpp=.o}
-OBJ			:=	${addprefix ${OBJ_DIR}, ${OBJ}}
+OBJ			:=	${addprefix ${OBJ_DIR}/, ${OBJ}}
 
 DEP			=	${OBJ:.o=.d}
 
@@ -78,7 +78,7 @@ all: ${NAME}
 
 -include ${DEP}
 
-${OBJ_DIR}%.o: ${SRC_DIR}%.cpp
+${OBJ_DIR}/%.o: ${SRC_DIR}/%.cpp
 	@${MKDIR} ${@D}
 	${CXX} $< ${CXXFLAGS} ${OUTPUT_OPTION}
 
